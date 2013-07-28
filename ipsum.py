@@ -29,9 +29,15 @@ drop_dict = {
 	4 : ['BRAAAAAAAAAAAAAAAAAAAAAAP']
 }
 
-#fade_dict = {}
+fade_dict = {
+	.5 : ['tss', 'taa'],
+	1 : ['tsssssss', 'taa'],
+	2 : ['tsssssssssssss', 'taaaaaaaaaaaaa'],
+	3: ['pssssssssssssssssssstaaa'],
+	4 : ['tssssssssssssssstaaaaaaaaaaaaaaaaaaa']
+}
 
-all_the_dicts = [wub_dict, vocal_dict,drop_dict]
+all_the_dicts = [wub_dict, vocal_dict, fade_dict]
 
 def get_key(dict_in_a_box, measure):
 		
@@ -66,30 +72,29 @@ def get_beats(dict_in_a_box):
 		key = get_key(dict_in_a_box, measure)
 		#return key
 		
-def choose_dict(all_the_dicts):	
-#def choose_dict(all_the_dicts, which_measure):
-	#while which_measure != 16:
-		#dict_in_a_box = drop_dict
-		#return dict_in_a_box
+def choose_dict(all_the_dicts, measure):	
+
+	if measure == 15:
+		dict_in_a_box = drop_dict
+		return dict_in_a_box
+	else:
 	#in cm, it's bigger that way
-	#else:
-	size = len(all_the_dicts)
-	dict_in_a_box = all_the_dicts[randint(0,(size-1))]
-	return dict_in_a_box
+		size = len(all_the_dicts)
+		dict_in_a_box = all_the_dicts[randint(0,(size-1))]
+		return dict_in_a_box
 	
 def create_song(num_of_measures):
 #def create_song(num_of_measures, which_measure):
 	which_measure = 0
 	while which_measure < num_of_measures:
 		#while which_measure < num_of_measures:
-		dict_in_a_box = choose_dict(all_the_dicts)
+		dict_in_a_box = choose_dict(all_the_dicts, which_measure)
 		get_beats(dict_in_a_box)
 		which_measure += 1
 		print which_measure
-	#return which_measure
+	
 
 
 # ask user to pass in how many songs they need
-#which_measure = create_song(10, which_measure)	
-create_song(10)
+create_song(17)
 	
