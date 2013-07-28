@@ -72,9 +72,9 @@ def get_beats(dict_in_a_box):
 		key = get_key(dict_in_a_box, measure)
 		#return key
 		
-def choose_dict(all_the_dicts, measure):	
-
-	if measure == 15:
+def choose_dict(all_the_dicts, measure):
+		
+	if (measure >14 and measure < 21):
 		dict_in_a_box = drop_dict
 		return dict_in_a_box
 	else:
@@ -96,5 +96,5 @@ def create_song(num_of_measures):
 
 
 # ask user to pass in how many songs they need
-create_song(17)
+create_song(30)
 	
