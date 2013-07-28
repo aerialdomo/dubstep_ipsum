@@ -1,5 +1,6 @@
 # sum the time to = 4
 # need a count of the measure
+# do dict logic
 # need to drop the beat
 from random import randint
 
@@ -12,7 +13,10 @@ wub_dict = {
 	}
 	
 vocal_dict = {
+	.5 : ['Yep'],
+	1 : ['Engage'],
 	2 : ['Let the beat drop'],
+	3 : ['blank'],
 	4 : ['And the invaders came from the dark clouds', 
 	'blocking the out Earth\'s sun']
 }
@@ -29,7 +33,7 @@ drop_dict = {
 
 all_the_dicts = [wub_dict, vocal_dict,drop_dict]
 
-def get_key(wub_dict, measure):
+def get_key(dict_in_a_box, measure):
 		
 	time = [ .5 ,1, 2, 3, 4]
 	time_avail = []
@@ -49,37 +53,43 @@ def get_key(wub_dict, measure):
 		return key
 
 
-def get_beats(wub_dict):
+def get_beats(dict_in_a_box):
 	measure = 0
-	key = get_key(wub_dict, measure)
+	key = get_key(dict_in_a_box, measure)
 	while (measure + key) <= 4:
 		#print type(key), 'key', key
-		beat = wub_dict[key][randint(0, len(wub_dict[key])-1)]
+		beat = dict_in_a_box[key][randint(0, len(dict_in_a_box[key])-1)]
 		print beat,
 		measure = measure + key
 		#print 'measure', measure
 		#print 'key', key
-		key = get_key(wub_dict, measure)
+		key = get_key(dict_in_a_box, measure)
 		#return key
-	
-def count_measure():
-	pass
-
-def choose_dict(all_the_dicts, measure):
+		
+def choose_dict(all_the_dicts):	
+#def choose_dict(all_the_dicts, which_measure):
+	#while which_measure != 16:
+		#dict_in_a_box = drop_dict
+		#return dict_in_a_box
 	#in cm, it's bigger that way
+	#else:
 	size = len(all_the_dicts)
 	dict_in_a_box = all_the_dicts[randint(0,(size-1))]
-	print dict_in_a_box
-	# do dict logic
-
-
+	return dict_in_a_box
+	
 def create_song(num_of_measures):
+#def create_song(num_of_measures, which_measure):
 	which_measure = 0
 	while which_measure < num_of_measures:
-		get_beats(wub_dict)
+		#while which_measure < num_of_measures:
+		dict_in_a_box = choose_dict(all_the_dicts)
+		get_beats(dict_in_a_box)
 		which_measure += 1
 		print which_measure
+	#return which_measure
+
 
 # ask user to pass in how many songs they need
-create_song(10)	
+#which_measure = create_song(10, which_measure)	
+create_song(10)
 	

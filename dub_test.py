@@ -26,14 +26,15 @@ drop_dict = {
 all_the_dicts = [wub_dict, vocal_dict,drop_dict]
 
 measure = 0	
-def choose_dict(all_the_dicts, measure):
+def choose_dict(all_the_dicts):
 	#in cm, it's bigger that way
 	size = len(all_the_dicts)
 	dict_in_a_box = all_the_dicts[randint(0,(size-1))]
-	print dict_in_a_box
+	print type(dict_in_a_box), dict_in_a_box
 	# do dict logic
+	print dict_in_a_box[.5][0]
 
 
-choose_dict(all_the_dicts, measure)	
+choose_dict(all_the_dicts)	
 			
 		
