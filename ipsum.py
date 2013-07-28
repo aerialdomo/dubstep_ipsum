@@ -3,7 +3,6 @@
 # need to drop the beat
 from random import randint
 
-
 wub_dict = {
 	.5 : ['wub', 'wob'],
 	1 : ['wuub', 'woob', 'blat'],
@@ -14,8 +13,19 @@ wub_dict = {
 	
 vocal_dict = {
 	2 : ['Let the beat drop'],
-	4 : ['And the invaders came from the dark clouds']
+	4 : ['And the invaders came from the dark clouds', 
+	'blocking the out Earth\'s sun']
 }
+
+drop_dict = {
+	.5 : ['BRE', 'WOB', 'WUB', 'WOBBLE', 'BEE', 'wub', 'wob'],
+	1 : ['WUUB', 'WOOB', 'BREEMP', 'BROOT', 'BREE', 'wuub', 'woob', 'blat'],
+	2 : ['WHOOMP', 'BWAMP', 'whoomp','wobble'],
+	3 : ['BREeEEEEEEeeEEEEE', 'breeeeeeeeeeeee', 'squeeeeeeeee'],
+	4 : ['BRAAAAAAAAAAAAAAAAAAAAAAP']
+}
+
+#fade_dict = {}
 
 def get_key(wub_dict, measure):
 		
@@ -47,10 +57,14 @@ def get_beats(wub_dict):
 		#print 'key', key
 		key = get_key(wub_dict, measure)
 
-def the_drop(x):
+def count_measure():
 		pass
 
-#key, measure = get_key(wub_dict)
+def choose_dict(self):
+		pass
+
 get_beats(wub_dict)
-#get vocals(vocal_dict)
+
+# ask user to pass in how many songs they need
+#create_song()	
 	
