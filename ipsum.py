@@ -17,23 +17,40 @@ vocal_dict = {
 	4 : ['And the invaders came from the dark clouds']
 }
 
-def get_beats(wub_dict):
-	
-	
-	measure = 0
-	while measure < 4:
-		time = [ .5 ,1, 2, 3, 4]
+def get_key(wub_dict, measure):
+		
+	time = [ .5 ,1, 2, 3, 4]
+	time_avail = []
+	if measure == 0:
 		key = time[randint(0,4)]
+		#print 'first key', key
+		return key
+	else:
+		for i in range(len(time)):
+			if measure + i <= 4:
+				#print 'time[i]', time[i]
+				time_avail.append(time[i])
+		key = time_avail[randint(0,len(time_avail)-1)]
+		#print 'other key', key		
+		return key
+
+
+def get_beats(wub_dict):
+	measure = 0
+	key = get_key(wub_dict, measure)
+	while (measure + key) <= 4:
 		#print type(key), 'key', key
 		beat = wub_dict[key][randint(0, len(wub_dict[key])-1)]
-		print beat
+		print beat,
 		measure = measure + key
 		#print 'measure', measure
 		#print 'key', key
+		key = get_key(wub_dict, measure)
 
 def the_drop(x):
 		pass
 
+#key, measure = get_key(wub_dict)
 get_beats(wub_dict)
 #get vocals(vocal_dict)
 	
