@@ -5,18 +5,18 @@
 from random import randint
 
 wub_dict = {
-	.5 : ['wub', 'wob'],
-	1 : ['wuub', 'woob', 'blat'],
-	2 : ['whoomp','wobble'],
+	.5 : ['wubwub', 'wobwob', 'whompwhomp'],
+	1 : ['wuub', 'woob', 'blat', 'wub', 'wob', 'whomp'],
+	2 : ['whoomp','wobble', 'vrooooooot'],
 	3 : ['breeeeeeeeeeeee', 'squeeeeeeeee'],
-	4 : ['pssssssssssssssssh']
+	4 : ['brooooooooooooooooooooot', 'breeeeeeeeeeeeeeeet']
 	}
 	
 vocal_dict = {
-	.5 : ['Yep'],
-	1 : ['Engage'],
-	2 : ['Let the beat drop'],
-	3 : ['blank'],
+	.5 : ['Yep', 'What', 'GO'],
+	1 : ['Engage', 'This message will self destruct in'],
+	2 : ['Let the beat drop'], #need to rule that drop follows this
+	3 : ['You are my oxygen', 'OOOOOOOOOOOOOOH', 'This message will self destruct in'],
 	4 : ['And the invaders came from the dark clouds', 
 	'blocking the out Earth\'s sun']
 }
@@ -26,14 +26,14 @@ drop_dict = {
 	1 : ['WUUB', 'WOOB', 'BREEMP', 'BROOT', 'BREE', 'wuub', 'woob', 'blat'],
 	2 : ['WHOOMP', 'BWAMP', 'whoomp','wobble'],
 	3 : ['BREeEEEEEEeeEEEEE', 'breeeeeeeeeeeee', 'squeeeeeeeee'],
-	4 : ['BRAAAAAAAAAAAAAAAAAAAAAAP']
+	4 : ['BRAAAaAAaAAaAAaAAAaAaAaAaAAP', 'BrOoOOOoooooOoOOoOOOooOOT']
 }
 
 fade_dict = {
-	.5 : ['tss', 'taa'],
+	.5 : ['tss', 'taa', 'tik'],
 	1 : ['tsssssss', 'taa'],
-	2 : ['tsssssssssssss', 'taaaaaaaaaaaaa'],
-	3: ['pssssssssssssssssssstaaa'],
+	2 : ['taaaaaaaaa'],
+	3: ['pssssssssssssssssh'],
 	4 : ['tssssssssssssssstaaaaaaaaaaaaaaaaaaa']
 }
 
@@ -91,7 +91,7 @@ def create_song(num_of_measures):
 		dict_in_a_box = choose_dict(all_the_dicts, which_measure)
 		get_beats(dict_in_a_box)
 		which_measure += 1
-		print which_measure
+		#print which_measure
 	
 
 
